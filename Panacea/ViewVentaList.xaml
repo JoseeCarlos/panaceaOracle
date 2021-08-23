@@ -1,0 +1,55 @@
+﻿<Window x:Class="Panacea.ViewVentaList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Panacea"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ViewVentaList" Height="644.048" Width="974.054" Loaded="Window_Loaded" BorderBrush="Black" BorderThickness="1" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid Background="#99FFFF" Height="80" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Registro de Ventas" FontSize="30" VerticalAlignment="Center" FontFamily="Showcard Gothic" />
+            </StackPanel>
+            <Image Source="img/vi.jpg" Margin="0,0,-0.2,0" HorizontalAlignment="Right" />
+            <Image Source="img/em2.jpg" Margin="0,0,114.2,0" HorizontalAlignment="Right" />
+        </Grid>
+        <Grid Margin="3,83,2.6,0">
+            <StackPanel Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker x:Name="date1"
+  Width="140"
+  materialDesign:HintAssist.Hint="Fecha"
+  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="10" />
+                    <DatePicker x:Name="date2"
+  Width="140"
+  materialDesign:HintAssist.Hint="Fecha"
+  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="10" />
+                    <Button x:Name="btnSearch" Content="Ventas Resgitradas" Click="btnSearch_Click" Background="Black"/>
+                  
+                </StackPanel>
+                <DataGrid x:Name="dgVentasR" CanUserAddRows="False" Height="399" Margin="5,5,5.2,5" BorderBrush="Black" BorderThickness="1" >
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem x:Name="CoInabilitar" Header="Anular Venta" Click="CoInabilitar_Click"/>
+                            <MenuItem x:Name="CodarBaja" Header="Dar de Baja" Click="CodarBaja_Click" />
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+                <StackPanel Height="58" Margin="0,0,-0.4,0">
+                    <TextBlock Text="Click Derecho Para las Opciones" Width="300" />
+                    <Button x:Name="btnsalir" Content="Salir" Width="100" HorizontalAlignment="Right" Margin="0,0,30,0" Click="btnsalir_Click" Background="Black"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
